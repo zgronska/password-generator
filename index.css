@@ -1,3 +1,85 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Karla:wght@800&display=swap');
+
+:root {
+    --maingreen: #10B981;
+    --darkestblue: #2B283A;
+    --darkblue: #273549;
+    --accentdarkblue:
+        #2F3E53;
+    --accentgreen: #5DEF92;
+    --lightgreen:
+        #ECFDF5;
+    --darkgrey: #6B7280;
+    --grey: #D5D4D8;
+}
+
+* {
+    /* border: 1px solid red; */
     margin: 0;
+}
+
+html {
+    font-size: 20px;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--lightgreen);
+    color: var(--darkgrey);
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    max-width: 28rem;
+}
+
+h1 {
+    font-size: 2rem;
+    color: var(--darkestblue);
+    font-family: 'Karla', sans-serif;
+    font-weight: 800;
+    margin: 0.5rem 0;
+}
+
+h1 span {
+    color: var(--maingreen);
+}
+
+button {
+    background: var(--maingreen);
+    color: white;
+    border: none;
+    margin-top: 2.5rem;
+
+}
+
+hr {
+    border: 1px solid var(--grey);
+    margin: 1.75rem 0;
+}
+
+.password {
+    background: var(--darkblue);
+    color: var(--accentgreen);
+}
+
+button,
+.password {
+    font-size: 0.8rem;
+    border-radius: 0.3rem;
+    padding: 0.5rem 0.75rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.passwords {
+    display: flex;
+    gap: 1.2rem;
+}
+
+.password {
+    min-width: 10.5rem;
 }
