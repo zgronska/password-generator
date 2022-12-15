@@ -1,20 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Karla:wght@800&display=swap');
 
-:root {
-    --maingreen: #10B981;
-    --darkestblue: #2B283A;
-    --darkblue: #273549;
-    --accentdarkblue:
-        #2F3E53;
-    --accentgreen: #5DEF92;
-    --lightgreen:
-        #ECFDF5;
-    --darkgrey: #6B7280;
-    --grey: #D5D4D8;
-}
-
 * {
-    /* border: 1px solid red; */
     margin: 0;
 }
 
@@ -24,46 +10,87 @@ html {
 
 body {
     min-height: 100vh;
-    background: var(--lightgreen);
-    color: var(--darkgrey);
+    background: #ECFDF5;
+    color: #6B7280;
     font-family: 'Inter', sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+body,
+.btn-theme,
+h1,
+h1 span,
+button,
+hr,
+.password {
+    transition: background-color 0.5s, color 0.5s, border 0.5s;
+}
+
 .container {
-    max-width: 28rem;
+    max-width: 27.5rem;
+    aspect-ratio: 1 / 1;
+    padding: 2.6rem;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.btn-theme {
+    background: #273549;
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 50%;
+    cursor: pointer;
+    align-self: end;
 }
 
 h1 {
     font-size: 2rem;
-    color: var(--darkestblue);
+    color: #1F2937;
     font-family: 'Karla', sans-serif;
     font-weight: 800;
     margin: 0.5rem 0;
+
 }
 
 h1 span {
-    color: var(--maingreen);
+    color: #10B981;
+
 }
 
 button {
-    background: var(--maingreen);
-    color: white;
-    border: none;
+    background: #10B981;
+    color: #fff;
     margin-top: 2.5rem;
+    cursor: pointer;
+    border: 1px solid #10B981;
 
+}
+
+button:hover,
+button:active {
+    background-color: #fff;
+    color: #10B981;
+}
+
+button:active {
+    opacity: .5;
 }
 
 hr {
-    border: 1px solid var(--grey);
+    border: 1px solid #D5D4D8;
     margin: 1.75rem 0;
+    width: 100%;
+
 }
 
 .password {
-    background: var(--darkblue);
-    color: var(--accentgreen);
+    background: #273549;
+    color: #5DEF92;
+
 }
 
 button,
@@ -77,9 +104,54 @@ button,
 
 .passwords {
     display: flex;
-    gap: 1.2rem;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
 }
 
 .password {
-    min-width: 10.5rem;
+    width: 10.5rem;
+}
+
+
+/* Dark theme */
+
+body.dark-theme {
+    color: #D5D4D8;
+    background: #1F2937;
+}
+
+body.dark-theme .btn-theme {
+    background: #fff;
+    color: #273549;
+}
+
+body.dark-theme h1 {
+    color: #fff;
+}
+
+body.dark-theme h1 span {
+    color: #4ADF86;
+}
+
+body.dark-theme button {
+    background: #10B981;
+    color: #fff;
+    border: 1px solid #10B981;
+}
+
+body.dark-theme hr {
+    border: 1px solid #2F3E53;
+}
+
+body.dark-theme button:hover,
+body.dark-theme button:active {
+    background-color: #fff;
+    color: #10B981;
+}
+
+body.dark-theme .password {
+    background: #273549;
+    color: #5DEF92;
 }
