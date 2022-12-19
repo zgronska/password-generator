@@ -45,6 +45,9 @@ hr,
     border-radius: 50%;
     cursor: pointer;
     align-self: end;
+    width: 1rem;
+    height: 1rem;
+    text-align: center;
 }
 
 h1 {
@@ -135,19 +138,13 @@ body.dark-theme h1 span {
     color: #4ADF86;
 }
 
-body.dark-theme button {
-    background: #10B981;
-    color: #fff;
-    border: 1px solid #10B981;
-}
-
 body.dark-theme hr {
     border: 1px solid #2F3E53;
 }
 
 body.dark-theme button:hover,
 body.dark-theme button:active {
-    background-color: #fff;
+    background-color: #273549;
     color: #10B981;
 }
 

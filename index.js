@@ -8,6 +8,8 @@ btnTheme.addEventListener("click", function () {
   btnTheme.classList.toggle("fa-sun");
 });
 
+// Password characters
+
 const characters = [
   "A",
   "B",
@@ -101,3 +103,27 @@ const characters = [
   "?",
   "/",
 ];
+
+// Password generating function
+
+const generateBtn = document.querySelector("#generate-btn");
+
+const passOne = document.querySelector("#pass-1");
+const passTwo = document.querySelector("#pass-2");
+
+generateBtn.addEventListener("click", generatePasswords);
+
+function generateCharacter() {
+  let randomCharIndex = Math.floor(Math.random() * characters.length);
+  let randomChar = characters[randomCharIndex];
+  return randomChar;
+}
+
+function generatePasswords() {
+  passOne.textContent = "";
+  passTwo.textContent = "";
+  for (let i = 0; i < 17; i++) {
+    passOne.textContent += generateCharacter();
+    passTwo.textContent += generateCharacter();
+  }
+}
