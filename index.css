@@ -24,18 +24,19 @@ h1,
 h1 span,
 button,
 hr,
-.password {
+.password,
+.password i {
     transition: background-color 0.5s, color 0.5s, border 0.5s;
 }
 
 .container {
-    max-width: 27.5rem;
     aspect-ratio: 1 / 1;
-    padding: 2.6rem;
     display: flex;
     flex-flow: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: flex-start;
+    padding: 1rem;
+    gap: 0.5rem
 }
 
 .btn-theme {
@@ -47,7 +48,6 @@ hr,
     align-self: end;
     width: 1rem;
     height: 1rem;
-    text-align: center;
 }
 
 h1 {
@@ -56,12 +56,10 @@ h1 {
     font-family: 'Karla', sans-serif;
     font-weight: 800;
     margin: 0.5rem 0;
-
 }
 
 h1 span {
     color: #10B981;
-
 }
 
 button,
@@ -70,7 +68,6 @@ button,
     color: #fff;
     cursor: pointer;
     border: 1px solid #10B981;
-
 }
 
 button:hover,
@@ -88,9 +85,7 @@ button:active,
 
 hr {
     border: 1px solid #D5D4D8;
-    margin: 1.75rem 0;
     width: 100%;
-
 }
 
 button,
@@ -123,11 +118,10 @@ button,
 
 .password i {
     border-radius: 50%;
-    padding: 0.4rem;
+    padding: 0.3rem;
     display: none;
     font-size: 0.8em;
 }
-
 
 /* Dark theme */
 
@@ -154,7 +148,9 @@ body.dark-theme hr {
 }
 
 body.dark-theme button:hover,
-body.dark-theme button:active {
+body.dark-theme button:active,
+body.dark-theme .password i:hover,
+body.dark-theme .password i:active {
     background-color: #273549;
     color: #10B981;
 }

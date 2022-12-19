@@ -108,11 +108,9 @@ const characters = [
 
 const generateBtn = document.querySelector("#generate-btn");
 
-const passOne = document.querySelector("#pass-1");
-const passTwo = document.querySelector("#pass-2");
+const passes = document.querySelectorAll(".pass-one, .pass-two");
 
-const copyOne = document.querySelector(".copy-one");
-const copyTwo = document.querySelector(".copy-two");
+const copies = document.querySelectorAll(".copy-one, .copy-two");
 
 generateBtn.addEventListener("click", generatePasswords);
 
@@ -123,26 +121,42 @@ function generateCharacter() {
 }
 
 function generatePasswords() {
-  passOne.textContent = "";
-  passTwo.textContent = "";
-  for (let i = 0; i < 17; i++) {
-    passOne.textContent += generateCharacter();
-    passTwo.textContent += generateCharacter();
+  passes.forEach((pass) => {
+    pass.textContent = "";
+  });
+
+  for (let i = 0; i < 16; i++) {
+    passes.forEach((pass) => {
+      pass.textContent += generateCharacter();
+    });
   }
-  copyOne.style.display = "block";
-  copyTwo.style.display = "block";
+
+  copies.forEach((copy) => {
+    copy.style.display = "block";
+    if (copy.classList.contains("fa-check")) {
+      copy.classList.remove("fa-check", "fa-solid");
+      copy.classList.add("fa-copy", "fa-regular");
+    }
+  });
 }
 
 // Copy password function
 
-function copyPassword(pass) {
+function copyPassword(pass, copy) {
   navigator.clipboard.writeText(pass.textContent);
+  copy.classList.add("fa-check", "fa-solid");
+  copy.classList.remove("fa-copy", "fa-regular");
 }
 
-copyOne.addEventListener("click", function () {
-  copyPassword(passOne);
-});
-
-copyTwo.addEventListener("click", function () {
-  copyPassword(passTwo);
+copies.forEach((copy) => {
+  copy.addEventListener("click", function () {
+    if (copy.classList.contains("copy-one")) {
+      // the code here is kinda wonky but it's the clearest solution I could come up with
+      copyPassword(passes[0], copies[0]);
+    } else if (copy.classList.contains("copy-two")) {
+      copyPassword(passes[1], copies[1]);
+    } else {
+      console.log("error");
+    }
+  });
 });
