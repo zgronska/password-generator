@@ -115,6 +115,8 @@ button,
 
 .password {
     width: 10.5rem;
+    min-height: 0.92rem;
+    cursor: pointer;
 }
 
 

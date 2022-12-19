@@ -127,3 +127,17 @@ function generatePasswords() {
     passTwo.textContent += generateCharacter();
   }
 }
+
+// Copy password function
+
+function copyPassword(pass) {
+  navigator.clipboard.writeText(pass.textContent);
+}
+
+passOne.addEventListener("click", function () {
+  copyPassword(passOne);
+});
+
+passTwo.addEventListener("click", function () {
+  copyPassword(passTwo);
+});
