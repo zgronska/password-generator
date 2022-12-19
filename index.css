@@ -64,22 +64,25 @@ h1 span {
 
 }
 
-button {
+button,
+.password i {
     background: #10B981;
     color: #fff;
-    margin-top: 2.5rem;
     cursor: pointer;
     border: 1px solid #10B981;
 
 }
 
 button:hover,
-button:active {
+button:active,
+.password i:hover,
+.password i:active {
     background-color: #fff;
     color: #10B981;
 }
 
-button:active {
+button:active,
+.password i:active {
     opacity: .5;
 }
 
@@ -87,12 +90,6 @@ hr {
     border: 1px solid #D5D4D8;
     margin: 1.75rem 0;
     width: 100%;
-
-}
-
-.password {
-    background: #273549;
-    color: #5DEF92;
 
 }
 
@@ -114,9 +111,21 @@ button,
 }
 
 .password {
-    width: 10.5rem;
-    min-height: 0.92rem;
-    cursor: pointer;
+    min-width: 11rem;
+    min-height: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    background: #273549;
+    color: #5DEF92;
+}
+
+.password i {
+    border-radius: 50%;
+    padding: 0.4rem;
+    display: none;
+    font-size: 0.8em;
 }
 
 

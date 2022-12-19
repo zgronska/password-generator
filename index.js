@@ -111,6 +111,9 @@ const generateBtn = document.querySelector("#generate-btn");
 const passOne = document.querySelector("#pass-1");
 const passTwo = document.querySelector("#pass-2");
 
+const copyOne = document.querySelector(".copy-one");
+const copyTwo = document.querySelector(".copy-two");
+
 generateBtn.addEventListener("click", generatePasswords);
 
 function generateCharacter() {
@@ -126,6 +129,8 @@ function generatePasswords() {
     passOne.textContent += generateCharacter();
     passTwo.textContent += generateCharacter();
   }
+  copyOne.style.display = "block";
+  copyTwo.style.display = "block";
 }
 
 // Copy password function
@@ -134,10 +139,10 @@ function copyPassword(pass) {
   navigator.clipboard.writeText(pass.textContent);
 }
 
-passOne.addEventListener("click", function () {
+copyOne.addEventListener("click", function () {
   copyPassword(passOne);
 });
 
-passTwo.addEventListener("click", function () {
+copyTwo.addEventListener("click", function () {
   copyPassword(passTwo);
 });
